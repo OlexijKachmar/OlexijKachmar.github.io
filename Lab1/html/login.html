@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
+
+            <div class="myclass1">
+                <img src="../static/css/images/935_oooo.plus.png" class="">
+
+                    <div class="content"><h2>Login</h2></div>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="field">
+                                <input class="form__input" placeholder=" " {{field}}
+                                <label for="{{ field.id_for_label }}" class="label">{{ field.html_name }}</label>
+                            </div>
+                        {% endfor %}
+                    <input type="submit" value="Log in" class="button is-primary">
+
+                    </form>
+            </div>
+
+  </div>
+
+{% endblock %}
